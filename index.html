@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Guess the number</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="game">
+      
+      <div class="game_header">
+        <h1 class="header_title">Μαντέψτε τον αριθμό</h1>
+      </div>
+
+      <div class="instructions">
+        Έχουμε διαλέξει έναν τυχαίο αριθμο μεταξύ 1 και 100<br>
+        Προσπαθήστε να τον βρείτε σε 10 το πολύ προσπάθειες.<br>
+        Κάθε φορά θα σας ενημερώνουμε για το αν δώσατε μεγαλύτερο ή μικρότερο αριθμό.<br>
+      </div>
+
+      <div class="game_plan">
+        <form action="back.php" method="post">
+        Μάντεψε    &nbsp
+        <input type="text" name="new-guess" id="new-guess" size="5">
+        &nbsp
+        <button id="check"> Έλεγξε </button>
+        </form>
+      </div>
+
+      <div class="messages">
+        <div id="message">  </div>
+        <div id="low-high"></div>
+        <button id= "restart"> Παίξτε πάλι </button>
+      
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

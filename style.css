@@ -1,0 +1,106 @@
+:root {
+	--light_text: #a39d9e;
+	--dark_text: #363b41;
+	--active_color_dark: #ff8494;
+	--active_color_light: #ffa9b7;
+	--btn-color: teal;
+    --btn-text: whitesmoke;
+    --msg-win-color: rgb(0, 128, 32);
+    --msg-wrong-color: crimson;
+    --msg-text:rgb(224, 224, 222);
+	--low-high-color: gray;
+	
+	font-size: 10px;
+	font-family: sans-serif;
+	background-color: var(--bg_color);
+}
+
+* {
+	box-sizing: border-box;
+	/*outline: 1px solid green;*/
+}
+
+.container {
+	margin: 10rem auto;
+	width: 80.9em;
+}
+
+.game {
+	width:60em;
+	background-color: #ffffff;
+	color: var(--dark_text);
+	padding: 2em 3em;
+	box-shadow: 0 0 3.5em -1em rgba(0,0,0,0.75);
+}
+
+.game_header {
+	font-size: 120%;
+	border-bottom: 0.2rem solid rgba(0,0,0,0.1);
+
+}
+
+.instructions {
+	background: linear-gradient(to right bottom, var(--active_color_dark), var(--active_color_light));
+	/*background: linear-gradient(to right bottom, var(--active_color_light), var(--active_color_dark));*/
+	color: #ffffff;
+	margin: 1em 0 3em 0;
+	padding: 1em;
+	font-size: 1.5em;
+	box-shadow: 0 0 3.5em -1em rgba(0,0,0,0.75);
+	text-align: center;
+	border-radius: 8px;
+	display: flow-root; /* Για να συμπεριλάβει τα .day_body και .day_add εντός του. */
+}
+
+.game_plan {
+	background: var(--light_text);
+	margin: 1em 0 3em 0;
+	padding: 1em;
+	font-size: 2em;
+	font-weight: bold;
+	text-align: center;
+	border-radius: 8px;
+}
+
+.messages {
+	background: var(--msg-text);
+	margin: 1em 0 3em 0;
+	padding: 1em;
+	font-size: 2em;
+	font-weight: bold;
+	text-align: center;
+	border-radius: 8px;
+	height: 10em;
+}
+
+button {
+    background-color: var(--btn-color);
+    color: var(--btn-text);
+    border-radius: 8px;
+}
+
+#message {
+    width: 100%;
+    color: var(--msg-text);
+    text-align: center;
+    margin: 10px;
+
+}
+
+#low-high {
+    color: var(--low-high-color);
+}
+
+button {
+    background-color: var(--btn-color);
+    color: var(--btn-text);
+    border-radius: 8px;
+}
+
+#instructions, #guess, #low-high {
+    margin: 15px;
+}
+
+#restart {
+    visibility: hidden;
+}
