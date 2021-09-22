@@ -17,7 +17,7 @@ let triesCounter = 0;
 
 function newRandom(){
     $.ajax({
-        url: "rand.php",
+        url: "random.php",
         type: "POST",
         success: function(data){
             console.log(data);
@@ -47,38 +47,38 @@ function processGuess(newValue){
     let userGuess = parseInt(newValue);
     newGuess.value = "";
     if (isNaN(userGuess)) {
-        message.textContent = "Äþóôå áñéèìü!";
+        message.textContent = "Δώστε αριθμό!";
         message.style.backgroundColor = "var(--msg-wrong-color)";
     } else if (userGuess>=1 && userGuess<=100){
         if (previousGuesses.indexOf(userGuess)=== -1) {
             triesCounter += 1;
             previousGuesses.push(userGuess);
-            lowHigh.textContent = "Ðñïçãïýìåíåò ðñïóðÜèåéåò: " + previousGuesses.join(" ");
+            lowHigh.textContent = "Προηγούμενες προσπάθειες: " + previousGuesses.join(" ");
             if (triesCounter <= 10) {
                 if (userGuess === theGuess) {
-                    message.textContent = "ÌðñÜâï, ôï âñÞêáôå!";
+                    message.textContent = "Μπράβο, το βρήκατε!";
                     message.style.backgroundColor = "var(--msg-win-color)";
                     newGuess.setAttribute("readonly", "");
                     return "win";
                 } else if (triesCounter === 10) {
-                    message.textContent = "ÔÝëïò ðáé÷íéäéïý, ÷Üóáôå!";
+                    message.textContent = "Τέλος παιχνιδιού, χάσατε!";
                     message.style.backgroundColor = "var(--msg-wrong-color)";
                     newGuess.setAttribute("readonly", "");
                     return "lost";
                 } else if (userGuess > theGuess) {
-                    message.textContent = "ËÜèïò, åßíáé ìéêñüôåñï.";
+                    message.textContent = "Λάθος, είναι μικρότερο.";
                     message.style.backgroundColor = "var(--msg-wrong-color)";
                 } else {
-                    message.textContent = "ËÜèïò, åßíáé ìåãáëýôåñï.";
+                    message.textContent = "Λάθος, είναι μεγαλύτερο.";
                     message.style.backgroundColor = "var(--msg-wrong-color)";
                 }
             }
         } else {
-            message.textContent = "¸÷åôå Þäç âÜëåé áõôüí ôïí áñéèìü!";
+            message.textContent = "Έχετε ήδη βάλει αυτόν τον αριθμό!";
             message.style.backgroundColor = "var(--msg-wrong-color)";
         }
     } else {
-        message.textContent = "Äþóôå Ýíáí áñéèìü ìåôáîý 1 êáé 100.";
+        message.textContent = "Δώστε έναν αριθμό μεταξύ 1 και 100.";
         message.style.backgroundColor = "var(--msg-wrong-color)";
     }
     
